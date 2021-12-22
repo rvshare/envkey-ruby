@@ -39,6 +39,8 @@ module Envkey::Platform
   def self.arch_part
     if platform_part == "darwin" && ARCH == "arm"
       "arm64"
+    elsif ARCH == "aarch64" # for arm images runnning under mac docker
+        "arm64"
     elsif ARCH == "x86_64"
       "amd64"
     else
