@@ -37,14 +37,12 @@ module Envkey::Platform
   end
 
   def self.arch_part
-    if platform_part == "darwin" && ARCH == "arm"
+    if ARCH == "arm"
       "arm64"
-    elsif ARCH == "aarch64" # for arm images runnning under mac docker
-        "arm64"
     elsif ARCH == "x86_64"
       "amd64"
     else
-      raise "As of 1.3.0, envkey-ruby only supports 64-bit systems. Please use an earlier version for 32-bit support."
+      raise "As of 1.3.0, envkey-ruby only supports 64-bit (arm, intel) systems. Please use an earlier version for 32-bit support."
     end
   end
 
