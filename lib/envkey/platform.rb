@@ -38,7 +38,7 @@ module Envkey::Platform
 
   def self.arch_part
     if ARCH == "arm"
-      "arm64"
+      "amd64"
     elsif ARCH == "x86_64"
       "amd64"
     else
